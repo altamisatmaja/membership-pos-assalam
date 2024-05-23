@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Pelanggan\AuthPelangganController;
 use App\Http\Controllers\Pelanggan\DashboardPelangganController;
+use App\Http\Controllers\Pelanggan\MemberPelangganController;
 use App\Http\Controllers\Web\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -93,6 +94,8 @@ Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
     Route::get('pelanggan/personal/update', [DashboardPelangganController::class, 'update'])->name('customer.dashboard.update');
     Route::put('pelanggan/personal/edit', [DashboardPelangganController::class, 'edit'])->name('customer.dashboard.edit');
     Route::get('pelanggan/personal/barcode', [DashboardPelangganController::class, 'barcode'])->name('customer.dashboard.barcode');
+
+    Route::post('pelanggan/member/store', [MemberPelangganController::class, 'store'])->name('customer.member.store');
 
     Route::get('pelanggan/logout', [AuthPelangganController::class,'logout'])->name('pelanggan.logout');
 });
