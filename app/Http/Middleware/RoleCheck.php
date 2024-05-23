@@ -21,8 +21,24 @@ class RoleCheck
                 return $next($request);
             }
         }
+
+        $currentUserRole = Auth::check() ? Auth::user()->role : null;
+
+        $redirectTo = '';
+
+        switch ($currentUserRole) {
+            case 'Admin':
+                $redirectTo = 'admin.login';
+                $message = 'Anda bukan Admin!';
+                break;
+            default:
+                $redirectTo = 'login';
+                $message = 'Email atau password salah!';
+                break;
+        }
+
         Auth::logout();
-        return redirect()->route('login')->with('status','You are not authorized to access this page.');
+        return redirect()->route($redirectTo)->with('status', $message);
     }
-    
+
 }

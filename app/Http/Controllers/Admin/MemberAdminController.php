@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class MemberAdminController extends Controller
 {
-    //
+    public function index(){
+        // Ignored, really
+    }
 }

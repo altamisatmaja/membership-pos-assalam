@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class RenewAdminController extends Controller
 {
-    //
+    public function index(){
+        // Ignored, really
+    }
 }
