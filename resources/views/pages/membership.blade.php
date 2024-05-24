@@ -191,7 +191,7 @@
                                 <select name="status_member" id="status_member"
                                     class="border py-4 px-6 text-base font-medium rounded w-full">
                                     <option value="Single">Single</option>
-                                    <option value="Tidak single">Tidak single</option>
+                                    <option value="Kawin">Kawin</option>
                                 </select>
                             </div>
                         </div>

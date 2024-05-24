@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('includes.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Assalam</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
-</head>
+@section('title', 'Dashboard | Pelanggan')
 
-<body class="antialiased">
+@section('content')
     <section class="bg-gray-50 ">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             @if (session('status'))
@@ -36,8 +28,10 @@
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <a href="#"
                         class="flex justify-center items-center mb-6 text-2xl font-semibold text-gray-900 ">
-                        <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-                            alt="logo">
+                        <div class="flex flex-col justify-center items-center">
+                            <img class="w-2/3 mr-2" src="{{ asset('images/teksassalam.png') }}" alt="logo-teks">
+                            <img class="w-1/3 mr-2" src="{{ asset('images/logoassalam.png') }}" alt="logo-assalam">
+                        </div>
                     </a>
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                         Welcome in Assalam Hypermarket
@@ -66,13 +60,13 @@
                                     <label for="remember" class="text-gray-500">Ingat password</label>
                                 </div>
                             </div>
-                            <a href="#" class="text-sm font-medium text-primary-600 hover:underline ">Lupa
+                            <a href="{{ route('password.request') }}" class="text-sm font-medium text-primary-600 hover:underline ">Lupa
                                 akun?</a>
                         </div>
                         <button type="submit"
                             class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Login</button>
                         <p class="text-sm font-light text-gray-500 ">
-                            Belum punya akun? <a href="#"
+                            Belum punya akun? <a href="{{ route('register') }}"
                                 class="font-medium text-green-600 hover:underline ">Daftar</a>
                         </p>
                     </form>
@@ -80,7 +74,6 @@
             </div>
         </div>
     </section>
-
-</body>
-
-</html>
+    @endsection
+    @push('js')
+    @endpush

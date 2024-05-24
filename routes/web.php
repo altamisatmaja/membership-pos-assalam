@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Pelanggan\AuthPelangganController;
 use App\Http\Controllers\Pelanggan\DashboardPelangganController;
 use App\Http\Controllers\Pelanggan\MemberPelangganController;
+use App\Http\Controllers\Pelanggan\RegisterPelangganController;
 use App\Http\Controllers\Web\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -41,18 +42,18 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('guest')->group(function () {
-    Route::get('pelanggan/login', [AuthPelangganController::class, 'index'])->name('customer.login');
-    Route::post('pelanggan/login/store', [AuthPelangganController::class, 'login'])->name('customer.login.store');
+    Route::get('login', [AuthPelangganController::class, 'index'])->name('customer.login');
+    Route::post('login/store', [AuthPelangganController::class, 'login'])->name('customer.login.store');
 
-    Route::get('register', [RegisteredUserController::class, 'create'])
+    Route::get('register', [RegisterPelangganController::class, 'index'])
                 ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])
-                ->name('login');
+    // Route::get('login', [AuthenticatedSessionController::class, 'create'])
+    //             ->name('login');
 
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    // Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');

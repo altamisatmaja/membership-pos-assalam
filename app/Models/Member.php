@@ -40,5 +40,4 @@ class Member extends Model
         'activated_at',
         'status_member'
     ];
-
 }
