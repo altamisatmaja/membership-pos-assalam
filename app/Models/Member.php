@@ -40,4 +40,8 @@ class Member extends Model
         'activated_at',
         'status_member'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

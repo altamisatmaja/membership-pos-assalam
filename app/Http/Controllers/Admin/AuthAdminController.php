@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthAdminController extends Controller
 {
     public function index(){
-        // Ignored
+        return view('admin.pages.auth.login');
     }
 
     public function login(LoginRequest $request)

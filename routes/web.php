@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\MemberAdminController;
 use App\Http\Controllers\Pelanggan\AuthPelangganController;
 use App\Http\Controllers\Pelanggan\DashboardPelangganController;
 use App\Http\Controllers\Pelanggan\MemberPelangganController;
@@ -40,6 +42,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::get('admin/login', [AuthAdminController::class, 'index'])->name('admin.login');
+Route::post('admin/login', [AuthAdminController::class, 'login'])->name('admin.login.store');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthPelangganController::class, 'index'])->name('customer.login');
@@ -103,7 +108,7 @@ Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
-    Route::get('admin/dashboard/member', [DashboardPelangganController::class, 'member'])->name('admin.dashboard.member');
+    Route::get('admin/dashboard/member', [MemberAdminController::class, 'index'])->name('admin.dashboard.member');
     Route::put('admin/dashboard/activate', [DashboardPelangganController::class, 'activate'])->name('admin.dashboard.activate');
 });
 

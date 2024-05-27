@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class DashboardAdminController extends Controller
 {
     public function index(){
-        // Ignored, really
+        return view('admin.pages.dashboard');
     }
 }
