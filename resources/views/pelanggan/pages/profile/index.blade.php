@@ -3,191 +3,64 @@
 @section('title', 'Dashboard | Pelanggan')
 
 @section('content')
-    <div>
+<!-- component -->
+<!-- This is an example component -->
+<div class="max-w-2xl mx-auto bg-white p-16">
 
-
-        <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
-            <div
-                class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
-                <div
-                    class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
-                    <div>
-                        <h6
-                            class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">
-                            Projects</h6>
-                        <p
-                            class="antialiased font-sans text-sm leading-normal flex items-center gap-1 font-normal text-blue-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                stroke="currentColor" aria-hidden="true" class="h-4 w-4 text-blue-500">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-                            </svg>
-                            <strong>30 done</strong> this month
-                        </p>
-                    </div>
-                    <button aria-expanded="false" aria-haspopup="menu" id=":r5:"
-                        class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
-                        type="button">
-                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currenColor" viewBox="0 0 24 24" stroke-width="3"
-                                stroke="currentColor" aria-hidden="true" class="h-6 w-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z">
-                                </path>
-                            </svg>
-                        </span>
-                    </button>
-                </div>
-                <div class="p-6 overflow-x-scroll px-0 pt-0 pb-2">
-                    <table class="w-full min-w-[640px] table-auto">
-                        <thead>
-                            <tr>
-                                <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-                                    <p
-                                        class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
-                                        companies</p>
-                                </th>
-                                <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-                                    <p
-                                        class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
-                                        budget</p>
-                                </th>
-                                <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-                                    <p
-                                        class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
-                                        completion</p>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="flex items-center gap-4">
-                                        <p
-                                            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                                            Material XD Version</p>
-                                    </div>
-                                </td>
-
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
-                                        $14,000</p>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="w-10/12">
-                                        <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
-                                            60%</p>
-                                        <div
-                                            class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                                            <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white"
-                                                style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="flex items-center gap-4">
-                                        <p
-                                            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                                            Add Progress Track</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
-                                        $3,000</p>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="w-10/12">
-                                        <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
-                                            10%</p>
-                                        <div
-                                            class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                                            <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white"
-                                                style="width: 10%;"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="flex items-center gap-4">
-                                        <p
-                                            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                                            Fix Platform Errors</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
-                                        Not set</p>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="w-10/12">
-                                        <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
-                                            100%</p>
-                                        <div
-                                            class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                                            <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white"
-                                                style="width: 100%;"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="flex items-center gap-4">
-                                        <p
-                                            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                                            Launch our Mobile App</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
-                                        $20,500</p>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="w-10/12">
-                                        <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
-                                            100%</p>
-                                        <div
-                                            class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                                            <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white"
-                                                style="width: 100%;"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="flex items-center gap-4">
-                                        <p
-                                            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                                            Add the New Pricing Page</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
-                                        $500</p>
-                                </td>
-                                <td class="py-3 px-5 border-b border-blue-gray-50">
-                                    <div class="w-10/12">
-                                        <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
-                                            25%</p>
-                                        <div
-                                            class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                                            <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white"
-                                                style="width: 25%;"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+	<form>
+    <div class="grid gap-6 mb-6 lg:grid-cols-2">
+        <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">First name</label>
+            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required>
         </div>
-
+        <div>
+            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Last name</label>
+            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required>
+        </div>
+        <div>
+            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company</label>
+            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Flowbite" required>
+        </div>
+        <div>
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone number</label>
+            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+        </div>
+        <div>
+            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Website URL</label>
+            <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="flowbite.com" required>
+        </div>
+        <div>
+            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Unique visitors (per month)</label>
+            <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
+        </div>
     </div>
+    <div class="mb-6">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
+        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required>
+    </div>
+    <div class="mb-6">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required>
+    </div>
+    <div class="mb-6">
+        <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Confirm password</label>
+        <input type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required>
+    </div>
+    <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required>
+        </div>
+        <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-400">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+    </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>
+
+	<p class="mt-5">These input field components is part of a larger, open-source library of Tailwind CSS components. Learn
+		more by going to the official <a class="text-blue-600 hover:underline"
+			href="https://flowbite.com/docs/getting-started/introduction/" target="_blank">Flowbite
+			Documentation</a>.
+	</p>
+</div>
 @endsection
 @push('js')
 @endpush

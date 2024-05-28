@@ -12,364 +12,165 @@
 
 <body>
     <div>
-        @include('includes.navbar')
-        <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-                alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
-            <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-                aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                </div>
+
+        <nav class="flex flex-wrap items-center justify-between p-3 bg-[#e8e8e5]">
+            <a href="/">
+                <div class="text-xl"><span class="font-semibold text-textbase">Assalam</span><span
+                        class="text-green-800 font-semibold">Hypermarket</span></div>
+            </a>
+            <div class="flex md:hidden">
+                <button id="hamburger">
+                    <svg class="toggle block" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#444444">
+                        <path
+                            d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z" />
+                    </svg>
+                    <svg class="toggle hidden" xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#444444">
+                        <path
+                            d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+                    </svg>
+                </button>
             </div>
-            <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-                aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                </div>
+            <div
+                class=" toggle hidden w-full md:w-auto md:text-lg md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
+                <a href="/" class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Home
+                </a>
+                <a href="{{ route('pages.shop') }}"
+                    class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Belanja
+                </a>
+                <a href="{{ route('pages.membership') }}"
+                    class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Membership
+                </a>
+                <a href="{{ route('pages.about') }}"
+                    class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">About
+                </a>
             </div>
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0">
-                    <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
-                    <p class="mt-6 text-lg leading-8 text-gray-300">Just work with us no matter what there is no spam
-                        call 911 on us if we spam you.</p>
+
+            <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
+                @auth
+                    <a href="{{ route('customer.dashboard') }}">
+                        <div class="flex justify-end">
+                            <div class="flex items-center h-10 w-30 rounded-md  text-white font-medium p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#444444">
+                                    <path
+                                        d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                @endauth
+                @guest
+                    <div class="flex flex-wrap gap-x-5 justify-end">
+                        <a href="{{ route('customer.login') }}"
+                            class="px-6 ring-1 ring-green-800 text-white bg-green-800 py-3 rounded-lg transition-all duration-150">Login</a>
+                        <a href="{{ route('register') }}"
+                            class="px-6 ring-1 ring-green-800 text-green-800 py-3 rounded-lg transition-all duration-150">Register</a>
+                        </a>
+                    @endguest
                 </div>
-                <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                    <div
-                        class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                        <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+        </nav>
+        <div class="relative w-full h-screen" id="home">
+            <div class="absolute inset-0 opacity-70">
+                <img src="https://image1.jdomni.in/banner/13062021/0A/52/CC/1AF5FC422867D96E06C4B7BD69_1623557926542.png"
+                    alt="Background Image" class="object-cover object-center w-full h-full" />
+
+            </div>
+        </div>
+        <div class="w-full flex flex-col justify-center items-center my-10 gap-y-3">
+            <h2 class="text-6xl font-semibold text-black">-- PROMO --</h2>
+            <p class="text-3xl font-semibold text-green-800">ASSALAM HYPERMARKET</p>
+        </div>
+        <div class=" flex items-center justify-center">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-lg border border-black p-4 content-between grid grid-cols-1">
+                        <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image"
+                            class="w-full h-48 rounded-md object-cover">
+                        <div class="px-1 py-4">
+                            <div class="font-bold text-xl mb-2 uppercase text-center">Minuman & Biskuit</div>
+                            <p class="text-gray-700 text-base text-center">
+                                This is a simple blog card example using Tailwind CSS. You can replace this text with
+                                your own blog content.
+                            </p>
+                        </div>
+                        <a href="#"
+                            class="text-white bg-green-800 hover:underline bottom-0 items-end rounded-lg"><button
+                                class="middle none center w-full rounded-lg bg-green-700 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                data-ripple-light="true">
+                                Detail
+                            </button></a>
                     </div>
-                    <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Offices worldwide</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
+                    <div class="bg-white rounded-lg border border-black p-4 content-between grid grid-cols-1">
+                        <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image"
+                            class="w-full h-48 rounded-md object-cover">
+                        <div class="px-1 py-4">
+                            <div class="font-bold text-xl mb-2 uppercase text-center">Elektronika & Perlengkapan rumah
+                                tangga</div>
+                            <p class="text-gray-700 text-base text-center">
+                                This is a simple blog card example using Tailwind CSS. You can replace this text with
+                                your own blog content.
+                            </p>
                         </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Full-time colleagues</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">300+</dd>
+                        <a href="#"
+                            class="text-white bg-green-800 hover:underline bottom-0 items-end rounded-lg"><button
+                                class="middle none center w-full rounded-lg bg-green-700 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                data-ripple-light="true">
+                                Detail
+                            </button></a>
+                    </div>
+                    <div class="bg-white rounded-lg border border-black p-4 content-between grid grid-cols-1">
+                        <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image"
+                            class="w-full h-48 rounded-md object-cover">
+                        <div class="px-1 py-4">
+                            <div class="font-bold text-xl mb-2 uppercase text-center">Aneka snack & Kebutuhan masak
+                            </div>
+                            <p class="text-gray-700 text-base text-center">
+                                This is a simple blog card example using Tailwind CSS. You can replace this text with
+                                your own blog content.
+                            </p>
                         </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Hours per week</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">40</dd>
+                        <a href="#"
+                            class="text-white bg-green-800 hover:underline bottom-0 items-end rounded-lg"><button
+                                class="middle none center w-full rounded-lg bg-green-700 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                data-ripple-light="true">
+                                Detail
+                            </button></a>
+                    </div>
+                    <div class="bg-white rounded-lg border border-black p-4 content-between grid grid-cols-1">
+                        <div>
+                            <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image"
+                                class="w-full h-48 rounded-md object-cover">
+                            <div class="px-1 py-4">
+                                <div class="font-bold text-xl mb-2 uppercase text-center">Parcel lebaran</div>
+                                <p class="text-gray-700 text-base text-center">
+                                    This is a simple blog card example using Tailwind CSS. You can replace this text
+                                    with
+                                    your own blog content.
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">Unlimited</dd>
-                        </div>
-                    </dl>
+                        <a href="#"
+                            class="text-white bg-green-800 hover:underline bottom-0 items-end rounded-lg"><button
+                                class="middle none center w-full rounded-lg bg-green-700 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                data-ripple-light="true">
+                                Detail
+                            </button></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- component -->
-        <section class="bg-white dark:bg-gray-800">
-            <div class="container px-6 py-8 mx-auto">
-                <div class="sm:flex sm:items-center sm:justify-between">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Simple, transparent pricing</h2>
-                        <p class="mt-4 text-gray-500 dark:text-gray-400">No Contracts. No surorise fees.</p>
-                    </div>
-
-                    <div class="overflow-hidden p-0.5 mt-6 border rounded-lg dark:border-gray-700">
-                        <div class="sm:-mx-0.5 flex">
-                            <button
-                                class=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-white bg-blue-500 rounded-lg">Monthly</button>
-                            <button
-                                class=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 bg-transparent rounded-lg hover:bg-gray-200">Yearly</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    <div
-                        class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Intro</p>
-                        <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$19 <span
-                                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
-                        <p class="mt-4 text-gray-500 dark:text-gray-300">For most businesses that want to optimaize web
-                            queries.</p>
-
-                        <div class="mt-8 space-y-8">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">All limited links</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Own analytics platform</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Chat support</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Optimize hashtags</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Unlimited users</span>
-                            </div>
-                        </div>
-
-                        <button
-                            class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                            Choose plan
-                        </button>
-                    </div>
-
-                    <div
-                        class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Base</p>
-                        <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$39 <span
-                                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
-                        <p class="mt-4 text-gray-500 dark:text-gray-300">For most businesses that want to optimaize web
-                            queries.</p>
-
-                        <div class="mt-8 space-y-8">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">All limited links</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Own analytics platform</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Chat support</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Optimize hashtags</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Unlimited users</span>
-                            </div>
-                        </div>
-
-                        <button
-                            class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                            Choose plan
-                        </button>
-                    </div>
-
-                    <div
-                        class="px-6 py-4 transition-colors duration-200 transform bg-gray-700 rounded-lg dark:bg-gray-600">
-                        <p class="text-lg font-medium text-gray-100">Popular</p>
-                        <h4 class="mt-2 text-4xl font-semibold text-gray-100">$99 <span
-                                class="text-base font-normal text-gray-400">/ Month</span></h4>
-                        <p class="mt-4 text-gray-300">For most businesses that want to optimaize web queries.</p>
-
-                        <div class="mt-8 space-y-8">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-300">All limited links</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-300">Own analytics platform</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-300">Chat support</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-300">Optimize hashtags</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-300">Unlimited users</span>
-                            </div>
-                        </div>
-
-                        <button
-                            class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                            Choose plan
-                        </button>
-                    </div>
-
-                    <div
-                        class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Exterprise</p>
-                        <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$199 <span
-                                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
-                        <p class="mt-4 text-gray-500 dark:text-gray-300">For most businesses that want to optimaize web
-                            queries.</p>
-
-                        <div class="mt-8 space-y-8">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">All limited links</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Own analytics platform</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Chat support</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Optimize hashtags</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <span class="mx-4 text-gray-700 dark:text-gray-300">Unlimited users</span>
-                            </div>
-                        </div>
-
-                        <button
-                            class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                            Choose plan
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
         @include('includes.footer')
     </div>
+    <script>
+        document.getElementById("hamburger").onclick = function toggleMenu() {
+            const navToggle = document.getElementsByClassName("toggle");
+            for (let i = 0; i < navToggle.length; i++) {
+                navToggle.item(i).classList.toggle("hidden");
+            }
+        };
+    </script>
 </body>
 
 </html>
