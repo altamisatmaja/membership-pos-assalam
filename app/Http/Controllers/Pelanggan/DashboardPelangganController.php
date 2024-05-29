@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class DashboardPelangganController extends Controller
 {
@@ -25,16 +26,9 @@ class DashboardPelangganController extends Controller
     }
 
     public function barcode(){
+
         $user = Auth::user();
         $member = $user->member;
-
-        $image = QrCode::format('png')
-                 ->merge('img/t.jpg', 0.1, true)
-                 ->size(200)->errorCorrection('H')
-                 ->generate('A simple example of QR code!');
-        $output_file = '/qr/pos-' . time() . '.png';
-        Storage::disk('local')->put($output_file, $image);
-
 
         return view('pelanggan.pages.barcode.index', compact('user', 'member'));
     }

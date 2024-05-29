@@ -20,7 +20,12 @@
                     {{ session('error') }}
                 </p>
             @endif
-            <div class="my-5">
+            <div class="my-3">
+                <div>
+                    <h4 class="text-2xl font-bold text-gray-800 my-2">
+                        Ubah data member Anda
+                    </h4>
+                </div>
                 <form action="{{ route('customer.dashboard.edit') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -29,13 +34,12 @@
                             <label for="nomor_pas" class="mb-3 block text-lg font-semibold text-gray-800">
                                 Nomor PAS
                                 <div class="">
-                                    <span class="font-medium text-base text-gray-600">Silahkan diisi sesuai nomor pas anda
-                                        apabila sudah terdaftar. Apabila belum
-                                        memiliki nomor pas, silahkan dikosongkan</span>
+                                    <span class="font-medium text-base text-gray-600">Nomor PAS Anda tidak dapat
+                                        diubah</span>
                                 </div>
                             </label>
-                            <input value="{{ $member->nomor_pas }}" type="text" name="nomor_pas" id="nomor_pas"
-                                placeholder="Nomor pas anda"
+                            <input value="{{ $member->nomor_pas }}" readonly disabled type="text" name="nomor_pas"
+                                id="nomor_pas" placeholder="Nomor pas anda"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         </div>
                     </div>
@@ -77,8 +81,8 @@
                                 <label for="tanggal_lahir" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Tanggal lahir
                                 </label>
-                                <input value="{{ Carbon\Carbon::parse($member->tanggal_lahir)->format('Y-m-d') }}" type="date" name="tanggal_lahir"
-                                    id="tanggal_lahir"
+                                <input value="{{ Carbon\Carbon::parse($member->tanggal_lahir)->format('Y-m-d') }}"
+                                    type="date" name="tanggal_lahir" id="tanggal_lahir"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                         </div>
@@ -271,7 +275,8 @@
                         </label>
 
                         <div class="mb-8">
-                            <input type="file" name="gambar_member" id="gambar_member" class="sr-only" value="{{ $member->gambar_member }}" />
+                            <input type="file" name="gambar_member" id="gambar_member" class="sr-only"
+                                value="{{ $member->gambar_member }}" />
                             <label for="gambar_member"
                                 class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
                                 <div>
@@ -288,7 +293,7 @@
                                 </div>
                             </label>
                             <div id="image-preview" class="mt-4"></div>
-                                <span id="file-error" class="text-red-500"></span>
+                            <span id="file-error" class="text-red-500"></span>
                         </div>
                     </div>
 

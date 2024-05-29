@@ -1,62 +1,44 @@
 @extends('pelanggan.layouts.app')
 
-@section('title', 'Dashboard | Pelanggan')
+@section('title', 'Dashboard | QR')
 
 @section('content')
-<div class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="shadow-md rounded-lg bg-white p-4">
-      <h1 class="text-2xl font-bold mb-2">QR Code Generator</h1>
-      <label for="url" class="text-lg font-medium mb-2 block">Enter URL:</label>
-      <input type="text" id="url" name="url" value="https://dr.dk" class="w-full p-2 border border-gray-400 rounded-md mb-2">
-      <div class="flex justify-center items-center mb-4">
-        <img id="qr-code" src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=https%3A%2F%2Fdr.dk" alt="QR code">
-        <canvas id="qr-canvas" width="200" height="200" class="ml-4"></canvas>
-      </div>
-      <button id="download-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
-        Download QR code
-      </button>
-      <div class="text-center">
-        <p class="text-gray-500 text-sm">Scan the QR code to visit the website</p>
-      </div>
+    <div class="bg-green-100 flex justify-center items-center h-screen">
+        <div class="shadow-md rounded-lg bg-white p-4">
+            <h1 class="text-2xl font-bold mb-2">QR untuk pembayaran</h1>
+            <div class="mt-7" id="qrcode-container">
+                {!! QrCode::size(300)->generate(json_encode($member)) !!}
+            </div>
+            <button id="download-button"
+                class="bg-green-800 w-full hover:bg-green-700 text-white font-bold py-2 px-4 rounded my-2 mt-5">
+                Download QR code
+            </button>
+            <div class="text-center">
+                <p class="text-gray-500 text-sm mt-3">Gunakan untuk setiap pembayaran anda ya</p>
+            </div>
+        </div>
     </div>
-  </div>
-<script>
-    const inputField = document.getElementById('url');
-const qrCode = document.getElementById('qr-code');
-const qrCanvas = document.getElementById('qr-canvas');
-const downloadButton = document.getElementById('download-button');
-
-// Listen for changes to the URL field
-inputField.addEventListener('input', function() {
-  // Generate QR code image URL
-  const url = inputField.value.trim();
-  const qrCodeUrl = `https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(url)}`;
-
-  // Update QR code image and canvas
-  qrCode.src = qrCodeUrl;
-  const ctx = qrCanvas.getContext('2d');
-  const img = new Image();
-  img.src = qrCodeUrl;
-  img.addEventListener('load', function() {
-    ctx.drawImage(img, 0, 0, 200, 200);
-  });
-});
-
-// Listen for download button click
-downloadButton.addEventListener('click', function() {
-  const url = inputField.value.trim();
-  const filename = `QR_${url.replace(/[\W_]+/g, "_")}.png`;
-
-  const downloadLink = document.createElement('a');
-  downloadLink.setAttribute('download', filename);
-  qrCanvas.toBlob(function(blob) {
-    const url = URL.createObjectURL(blob);
-    downloadLink.setAttribute('href', url);
-    downloadLink.click();
-  });
-});
-
-</script>
 @endsection
+
 @push('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('download-button').addEventListener('click', function() {
+            var qrCodeContainer = document.getElementById('qrcode-container');
+
+            html2canvas(qrCodeContainer).then(canvas => {
+                var dataURL = canvas.toDataURL('image/png');
+
+                var downloadLink = document.createElement('a');
+                downloadLink.href = dataURL;
+                downloadLink.download = 'qrcode.png';
+
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            }).catch(function(error) {
+                console.error('Gagal mendownload QR:', error);
+            });
+        });
+    </script>
 @endpush
