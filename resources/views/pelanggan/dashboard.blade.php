@@ -3,66 +3,74 @@
 @section('title', 'Dashboard | Pelanggan')
 
 @section('content')
-<div class="flex flex-col justify-center items-center h-[100vh]">
-    <div class="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500    p-3">
-        <div class="mt-2 mb-8 w-full">
-            <h4 class="px-2 text-xl font-bold text-navy-700 ">
-            General Information
-            </h4>
-            <p class="mt-2 px-2 text-base text-gray-600">
-            As we live, our hearts turn colder. Cause pain is what we go through
-            as we become older. We get insulted by others, lose trust for those
-            others. We get back stabbed by friends. It becomes harder for us to
-            give others a hand. We get our heart broken by people we love, even
-            that we give them all...
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4 px-2 w-full">
-            <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Education</p>
-            <p class="text-base font-medium text-navy-700 ">
-                Stanford University
-            </p>
+    <div class="flex flex-col justify-center w-full">
+        <div
+            class="relative flex flex-col items-center rounded-[20px] w-full mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 p-3">
+            <div class="mt-2 mb-8 w-full">
+                <h4 class="px-2 text-xl font-bold text-navy-700">
+                    Informasi Pribadi
+                </h4>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 w-full">
+                @php
+                    $user = auth()->user();
+                    $member = $user->member;
 
-            <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Languages</p>
-            <p class="text-base font-medium text-navy-700 ">
-                English, Spanish, Italian
-            </p>
-            </div>
+                    $fields = [
+                        'name' => 'Nama',
+                        'email' => 'Email',
+                        'nomor_pas' => 'Nomor Pas',
+                        'nama_member' => 'Nama Member',
+                        'kewarganegaraan' => 'Kewarganegaraan',
+                        'tempat_lahir' => 'Tempat Lahir',
+                        'tanggal_lahir' => 'Tanggal Lahir',
+                        'jenis_kelamin' => 'Jenis Kelamin',
+                        'agama' => 'Agama',
+                        'alamat' => 'Alamat Lengkap',
+                        'provinsi' => 'Provinsi',
+                        'kabupaten' => 'Kabupaten',
+                        'kecamatan' => 'Kecamatan',
+                        'kelurahan' => 'Kelurahan',
+                        'rt_rw' => 'RT/RW',
+                        'kode_zip' => 'Kode ZIP',
+                        'no_hp' => 'No HP',
+                        'no_telp' => 'Nomor Telepon',
+                        'status' => 'Status',
+                        'jumlah_tanggungan' => 'Jumlah Tanggungan',
+                        'pendapatan_bulanan' => 'Pendapatan Bulanan',
+                        'kena_pajak' => 'Kena Pajak',
+                        'npwp' => 'NPWP',
+                    ];
+                @endphp
 
-            <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Department</p>
-            <p class="text-base font-medium text-navy-700 ">
-                Product Design
-            </p>
-            </div>
+                @foreach ($fields as $field => $label)
+                    @php
+                        $value = $user->{$field} ?? ($member->{$field} ?? 'N/A');
 
-            <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Work History</p>
-            <p class="text-base font-medium text-navy-700 ">
-                English, Spanish, Italian
-            </p>
-            </div>
+                        if ($field === 'tanggal_lahir' && $value !== 'N/A') {
+                            $value = \Carbon\Carbon::parse($value)->format('d-m-Y');
+                        }
 
-            <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Organization</p>
-            <p class="text-base font-medium text-navy-700 ">
-                Simmmple Web LLC
-            </p>
-            </div>
+                        if ($field === 'kena_pajak') {
+                            $value = $value ? 'Iya' : 'Tidak';
+                        }
 
-            <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
-            <p class="text-sm text-gray-600">Birthday</p>
-            <p class="text-base font-medium text-navy-700 ">
-                20 July 1986
-            </p>
+                        if($field === 'pendapatan_bulanan'){
+                            $value = 'Rp '.number_format($value,0,',','.');
+                        }
+
+                    @endphp
+                    <div
+                        class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500">
+                        <p class="text-sm text-gray-600">{{ $label }}</p>
+                        <p class="text-base font-medium text-navy-700">
+                            {{ $value }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <p class="font-normal text-navy-700 mt-20 mx-auto w-max">Profile Card component from <a href="https://horizon-ui.com?ref=tailwindcomponents.com" target="_blank" class="text-brand-500 font-bold">Horizon UI Tailwind React</a></p>
-</div>
 @endsection
 @push('js')
 @endpush

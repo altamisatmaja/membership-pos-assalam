@@ -35,11 +35,11 @@
                     @csrf
                     <div class="w-full">
                         <div class="mb-5">
-                            <label for="nomor_pas" class="mb-3 block text-base font-medium text-[#07074D]">
+                            <label for="nomor_pas" class="mb-3 block text-lg font-semibold text-gray-800">
                                 Nomor PAS
                                 <div class="">
-                                    <span>Silahkan diisi sesuai nomor pas anda apabila sudah terdaftar. Apabila belum
-                                        memiliki nomro pas, silahkan dikosongkan</span>
+                                    <span class="font-medium text-base text-gray-600">Silahkan diisi sesuai nomor pas anda apabila sudah terdaftar. Apabila belum
+                                        memiliki nomor pas, silahkan dikosongkan</span>
                                 </div>
                             </label>
                             <input type="text" name="nomor_pas" id="nomor_pas" placeholder="Nomor pas anda"
@@ -49,7 +49,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="nama_member" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="nama_member" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Nama
                                 </label>
                                 <input type="text" name="nama_member" id="nama_member" placeholder="Nama anda"
@@ -58,7 +58,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="kewarganegaraan" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="kewarganegaraan" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Kewarganegaraan
                                 </label>
                                 <input type="text" name="kewarganegaraan" id="kewarganegaraan"
@@ -70,7 +70,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="tempat_lahir" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="tempat_lahir" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Tempat lahir
                                 </label>
                                 <input type="text" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat lahir anda"
@@ -79,7 +79,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="tanggal_lahir" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="tanggal_lahir" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Tanggal lahir
                                 </label>
                                 <input type="date" name="tanggal_lahir" id="tanggal_lahir"
@@ -90,7 +90,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="jenis_kelamin" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="jenis_kelamin" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Jenis kelamin
                                 </label>
                                 <select name="jenis_kelamin" id="jenis_kelamin"
@@ -102,7 +102,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="agama" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="agama" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Agama
                                 </label>
                                 <select name="agama" id="agama"
@@ -120,13 +120,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="provinsi">Provinsi *</label>
-                            <select name="provinsi" id="provinsi" class="provinsi border p-2 rounded w-full">
+                            <select name="provinsi" id="provinsi" class="provinsi border p-2  py-4 px-6 rounded w-full">
                                 <option data-id="1" value="JAWA TIMUR">Pilih provinsi</option>
                             </select>
                         </div>
                         <div>
                             <label for="kabupaten">Kabupaten *</label>
-                            <select disabled name="kabupaten" id="kabupaten" class="kabupaten border p-2 rounded w-full">
+                            <select disabled name="kabupaten" id="kabupaten" class="kabupaten border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="KAB. NGAWI">Pilih kabupaten</option>
                             </select>
                         </div>
@@ -134,13 +134,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="kecamatan">Kecamatan *</label>
-                            <select disabled name="kecamatan" id="kecamatan" class="kecamatan border p-2 rounded w-full">
+                            <select disabled name="kecamatan" id="kecamatan" class="kecamatan border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="Paron">Pilih kecamatan</option>
                             </select>
                         </div>
                         <div>
                             <label for="kelurahan">kelurahan *</label>
-                            <select disabled name="kelurahan" id="kelurahan" class="kelurahan border p-2 rounded w-full">
+                            <select disabled name="kelurahan" id="kelurahan" class="kelurahan border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="1">Pilih kelurahan</option>
                             </select>
                         </div>
@@ -148,7 +148,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="alamat" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="alamat" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Alamat
                                 </label>
                                 <input type="text" name="alamat" id="alamat" placeholder="Tempat lahir anda"
@@ -157,7 +157,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="rt_rw" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="rt_rw" class="mb-3 block text-lg font-semibold text-gray-800">
                                     RT/RW
                                 </label>
                                 <input type="text" name="rt_rw" id="rt_rw" placeholder="Masukkan rt rw Anda"
@@ -168,7 +168,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="kode_zip" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="kode_zip" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Post code
                                 </label>
                                 <input type="text" name="kode_zip" id="kode_zip" placeholder="Tempat lahir anda"
@@ -177,7 +177,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="no_hp" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="no_hp" class="mb-3 block text-lg font-semibold text-gray-800">
                                     No hp
                                 </label>
                                 <input type="text" name="no_hp" id="no_hp" placeholder="Masukkan no telp Anda"
@@ -189,7 +189,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="status_member" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="status_member" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Status member
                                 </label>
                                 <select name="status_member" id="status_member"
@@ -201,7 +201,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="no_telp" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="no_telp" class="mb-3 block text-lg font-semibold text-gray-800">
                                     No telp
                                 </label>
                                 <input type="text" name="no_telp" id="no_telp" placeholder="Masukkan rt rw Anda"
@@ -213,7 +213,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="jumlah_tanggungan" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="jumlah_tanggungan" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Jumlah tanggungan
                                 </label>
                                 <input type="number" name="jumlah_tanggungan" id="jumlah_tanggungan"
@@ -223,7 +223,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="pendapatan_bulanan" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="pendapatan_bulanan" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Pendapatan bulanan
                                 </label>
                                 <input type="number" name="pendapatan_bulanan" id="pendapatan_bulanan"
@@ -236,7 +236,7 @@
                     <div class="-mx-3 flex flex-wrap">
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="kena_pajak" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="kena_pajak" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Pengusahaa kena pajak
                                 </label>
                                 <select name="kena_pajak" id="kena_pajak"
@@ -248,7 +248,7 @@
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
-                                <label for="npwp" class="mb-3 block text-base font-medium text-[#07074D]">
+                                <label for="npwp" class="mb-3 block text-lg font-semibold text-gray-800">
                                     NPWP
                                 </label>
                                 <input type="text" name="npwp" id="npwp" placeholder="Masukkan rt rw Anda"
@@ -259,7 +259,7 @@
 
 
                     <div class="mb-6 pt-4">
-                        <label class="mb-5 block text-xl font-semibold text-[#07074D]">
+                        <label class="mb-5 block text-xl font-semibold text-gray-800">
                             Foto anda
                         </label>
 
@@ -268,15 +268,15 @@
                             <label for="gambar_member"
                                 class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
                                 <div>
-                                    <span class="mb-2 block text-xl font-semibold text-[#07074D]">
-                                        Drop files here
+                                    <span class="mb-2 block text-xl font-semibold text-gray-800">
+                                        Taruh gambar disini
                                     </span>
                                     <span class="mb-2 block text-base font-medium text-[#6B7280]">
-                                        Or
+                                        atau
                                     </span>
                                     <span
-                                        class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
-                                        Browse
+                                        class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-lg font-semibold text-gray-800">
+                                        Cari
                                     </span>
                                 </div>
                             </label>
