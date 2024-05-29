@@ -67,7 +67,7 @@
                                 </li>
                             </ul>
                             <div class="space-y-2 pt-2">
-                                <a href="#"
+                                <a href="{{ route('admin.logout') }}"
                                         class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                                         <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
                                             fill="currentColor" viewBox="0 0 20 20"

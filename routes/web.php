@@ -112,5 +112,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard/activate', [ActivateAdminController::class, 'index'])->name('admin.dashboard.activate');
     Route::get('admin/dashboard/activate/{nomor_pas}', [ActivateAdminController::class, 'show'])->name('admin.dashboard.activate.show');
     Route::put('admin/dashboard/activate/update/{nomor_pas}', [ActivateAdminController::class, 'update'])->name('admin.dashboard.activate.update');
+
+    Route::get('admin/logout', [AuthAdminController::class,'logout'])->name('admin.logout');
 });
 
