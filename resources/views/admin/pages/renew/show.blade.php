@@ -22,7 +22,7 @@
                         <label class=" text-lg font-bold mb-2" for="nomor_pas">
                             Nomor PAS
                         </label>
-                        <input readonly disabled
+                        <input
                             class="appearance-none text-gray-600 w-full bg-grey-lighter  border border-grey-lighter rounded py-3 px-4"
                             id="nomor_pas" name="nomor_pas" type="text" value="{{ $member->nomor_pas }}">
                     </div>
