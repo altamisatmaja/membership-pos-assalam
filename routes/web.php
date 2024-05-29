@@ -36,6 +36,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 Route::get('/', [PagesController::class, 'index'])->name('pages.home');
 Route::get('belanja', [PagesController::class, 'shop'])->name('pages.shop');
 Route::get('membership', [PagesController::class, 'membership'])->name('pages.membership');
+Route::get('pre-membership', [PagesController::class, 'pre_membership'])->name('pages.pre-membership');
 Route::get('tentang', [PagesController::class, 'about'])->name('pages.about');
 
 Route::get('/dashboard', function () {

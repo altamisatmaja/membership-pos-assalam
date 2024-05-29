@@ -23,6 +23,14 @@ class PagesController extends Controller
         return view('pages.membership');
     }
 
+    public function pre_membership(){
+        if (!Auth::check()) {
+            return redirect()->route('customer.login');
+        }
+
+        return view('pages.pre-membership');
+    }
+
     public function about(){
         return view('pages.about');
     }

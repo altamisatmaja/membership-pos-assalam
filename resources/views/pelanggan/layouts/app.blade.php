@@ -11,15 +11,43 @@
 </head>
 
 <body class="antialiased">
-    <div class="min-h-screen bg-gray-50/50">
-        @include('pelanggan.layouts.sidebar')
-        <div class="p-4 xl:ml-80">
+    <div x-data="setup()" :class="{ 'dark': isDark }">
+        <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white  text-black ">
+
             @include('pelanggan.layouts.navbar')
-            <div class="mt-5">
+            @include('pelanggan.layouts.sidebar')
+
+            <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
                 @yield('content')
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <script>
+        const setup = () => {
+            const getTheme = () => {
+                if (window.localStorage.getItem('dark')) {
+                    return JSON.parse(window.localStorage.getItem('dark'))
+                }
+                return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            }
+
+            const setTheme = (value) => {
+                window.localStorage.setItem('dark', value)
+            }
+
+            return {
+                loading: true,
+                isDark: getTheme(),
+                toggleTheme() {
+                    this.isDark = !this.isDark
+                    setTheme(this.isDark)
+                },
+            }
+        }
+    </script>
 </body>
 @stack('js')
+
 </html>

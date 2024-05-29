@@ -1,4 +1,4 @@
-<nav class="sticky top-0 z-50  flex flex-wrap items-center justify-between p-3 bg-[#e8e8e5]">
+<nav class="sticky top-0 z-50  flex flex-wrap items-center justify-between p-3 bg-white">
     <a href="/">
         <div class="text-xl"><span class="font-semibold text-textbase">Assalam</span><span
                 class="text-green-800 font-semibold">Hypermarket</span></div>
@@ -17,19 +17,40 @@
             </svg>
         </button>
     </div>
-    <div class=" toggle hidden w-full md:w-auto md:text-lg md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
-        <a href="/" class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Home
-        </a>
-        <a href="{{ route('pages.shop') }}"
-            class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Belanja
-        </a>
-        <a href="{{ route('pages.membership') }}"
-            class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">Membership
-        </a>
-        <a href="{{ route('pages.about') }}"
-            class="block md:inline-block hover:text-green-800 px-3 py-3 md:border-none">About
-        </a>
-    </div>
+    @auth
+        <div
+            class=" toggle hidden w-full md:w-auto md:text-lg md:-ml-36 md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
+            <a href="/"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Home
+            </a>
+            <a href="{{ route('pages.shop') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Belanja
+            </a>
+            <a href="{{ route('pages.pre-membership') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Membership
+            </a>
+            <a href="{{ route('pages.about') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">About
+            </a>
+        </div>
+    @endauth
+    @guest
+        <div
+            class=" toggle hidden w-full md:w-auto md:text-lg md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
+            <a href="/"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Home
+            </a>
+            <a href="{{ route('pages.shop') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Belanja
+            </a>
+            <a href="{{ route('pages.pre-membership') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Membership
+            </a>
+            <a href="{{ route('pages.about') }}"
+                class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">About
+            </a>
+        </div>
+    @endguest
 
     <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
         @auth
@@ -48,10 +69,18 @@
         @guest
             <div class="flex flex-wrap gap-x-5 justify-end">
                 <a href="{{ route('customer.login') }}"
-                    class="px-6 ring-1 ring-green-800 text-white bg-green-800 py-3 rounded-lg transition-all duration-150">Login</a>
+                    class="px-5 ring-1 ring-green-800 text-white bg-green-800 py-2 rounded-lg transition-all duration-150">Login</a>
                 <a href="{{ route('register') }}"
-                    class="px-6 ring-1 ring-green-800 text-green-800 py-3 rounded-lg transition-all duration-150">Register</a>
+                    class="px-5 ring-1 ring-green-800 text-green-800 py-2 rounded-lg transition-all duration-150">Register</a>
                 </a>
             @endguest
         </div>
 </nav>
+<script>
+    document.getElementById("hamburger").onclick = function toggleMenu() {
+        const navToggle = document.getElementsByClassName("toggle");
+        for (let i = 0; i < navToggle.length; i++) {
+            navToggle.item(i).classList.toggle("hidden");
+        }
+    };
+</script>

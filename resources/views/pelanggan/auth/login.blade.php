@@ -33,8 +33,8 @@
                             <img class="w-1/3 mr-2" src="{{ asset('images/logoassalam.png') }}" alt="logo-assalam">
                         </div>
                     </a>
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
-                        Welcome in Assalam Hypermarket
+                    <h1 class="text-xl font-bold leading-tight text-center tracking-tight text-gray-900 md:text-2xl ">
+                        Selamat datang di Assalam Hypermarket
                     </h1>
                     <form class="space-y-4 md:space-y-6" action="{{ route('customer.login.store') }}" method="POST">
                         @csrf

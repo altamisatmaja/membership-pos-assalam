@@ -1,31 +1,35 @@
 @extends('includes.app')
 
-@section('title', 'Dashboard | Pelanggan')
+@section('title', 'Assalam | Membership')
 
 @section('content')
     <div class="flex items-center justify-center p-12">
 
         <div class="mx-auto w-full">
-            <div class="flex justify-center mb-8">
-                <img src="https://www.emprenderconactitud.com/img/POC%20WCS%20(1).png" alt="Logo" class="w-30 h-20">
+            <div class="flex flex-wrap justify-center mb-8">
+                <img src="{{ asset('images/logoassalam.png') }}" alt="Logo" class="h-28">
+                <img src="{{ asset('images/teksassalam.png') }}" alt="Logo" class="h-28">
+            </div>
+            <div class="flex flex-col justify-center">
+                <h1 class="text-2xl font-semibold text-center text-gray-800 mt-8">Pendaftaran Kartu
+                <h1 class="text-2xl font-semibold text-center text-gray-800 mt-8 mb-6">Member Assalam Hypermarket
+                </h1>
             </div>
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-        @if (session('error'))
-            <p>
-                {{ session('error') }}
-            </p>
-        @endif
-            <h1 class="text-2xl font-semibold text-center text-gray-500 mt-8 mb-6">Pendafaran Kartu</h1>
-            <h1 class="text-2xl font-semibold text-center text-gray-500 mt-8 mb-6">Member Assalam Hypermarket</h1>
+            @if (session('error'))
+                <p>
+                    {{ session('error') }}
+                </p>
+            @endif
             <div class="my-10">
                 <form action="{{ route('customer.member.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -281,7 +285,7 @@
 
                     <div class="w-full mx-auto justify-center items-center">
                         <button type="submit"
-                            class="w-full hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                            class="w-full hover:shadow-form rounded-md bg-green-800 py-3 px-8 text-center text-base font-semibold text-white outline-none">
                             Submit
                         </button>
                     </div>
