@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ActivateAdminController;
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\MemberAdminController;
@@ -110,7 +111,11 @@ Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+
     Route::get('admin/dashboard/member', [MemberAdminController::class, 'index'])->name('admin.dashboard.member');
-    Route::put('admin/dashboard/activate', [DashboardPelangganController::class, 'activate'])->name('admin.dashboard.activate');
+
+    Route::get('admin/dashboard/activate', [ActivateAdminController::class, 'index'])->name('admin.dashboard.activate');
+    Route::get('admin/dashboard/activate/{nomor_pas}', [ActivateAdminController::class, 'show'])->name('admin.dashboard.activate.show');
+    Route::put('admin/dashboard/activate/update/{nomor_pas}', [ActivateAdminController::class, 'update'])->name('admin.dashboard.activate.update');
 });
 

@@ -4,7 +4,7 @@
 
 @section('content')
     <section class="bg-white ">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mt-14 mb-6 mx-auto md:h-screen lg:py-0">
             @if (session('status'))
                 <div
                     class='flex items-center text-white w-full sm:max-w-md bg-red-400 shadow-md rounded-lg overflow-hidden mx-auto mb-7'>
