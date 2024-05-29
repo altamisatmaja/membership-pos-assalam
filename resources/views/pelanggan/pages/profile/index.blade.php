@@ -77,7 +77,7 @@
                                 <label for="tanggal_lahir" class="mb-3 block text-lg font-semibold text-gray-800">
                                     Tanggal lahir
                                 </label>
-                                <input value="{{ $member->tanggal_lahir }}" type="date" name="tanggal_lahir"
+                                <input value="{{ Carbon\Carbon::parse($member->tanggal_lahir)->format('Y-m-d') }}" type="date" name="tanggal_lahir"
                                     id="tanggal_lahir"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
@@ -259,19 +259,19 @@
                                 </label>
                                 <input value="{{ $member->npwp }}" type="text" name="npwp" id="npwp"
                                     placeholder="Masukkan rt rw Anda"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-4 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                         </div>
                     </div>
 
 
                     <div class="mb-6 pt-4">
-                        <label class="mb-5 block text-xl font-semibold text-gray-800">
+                        <label class="mb-5 block text-xl font-semibold text-gray-800" for="gambar_member">
                             Foto anda
                         </label>
 
                         <div class="mb-8">
-                            <input type="file" name="gambar_member" id="gambar_member" class="sr-only" />
+                            <input type="file" name="gambar_member" id="gambar_member" class="sr-only" value="{{ $member->gambar_member }}" />
                             <label for="gambar_member"
                                 class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
                                 <div>

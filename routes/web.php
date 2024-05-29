@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\MemberAdminController;
+use App\Http\Controllers\Pelanggan\AcocuntPelangganController;
 use App\Http\Controllers\Pelanggan\AuthPelangganController;
 use App\Http\Controllers\Pelanggan\DashboardPelangganController;
 use App\Http\Controllers\Pelanggan\MemberPelangganController;

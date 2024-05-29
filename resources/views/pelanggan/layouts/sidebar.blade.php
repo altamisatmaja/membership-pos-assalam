@@ -6,7 +6,7 @@
                 <a href="{{ route('customer.dashboard') }}"
                     class="relative hidden md:flex items-center justify-center mx-auto text-center mb-10 mt-8 h-32 focus:outline-none  text-white-600  border-l-4 border-transparent  pr-6 rounded-lg">
                     <div class="w-full md:w-40 flex justify-center items-center">
-                        <img class="w-full rounded-xl" src="https://i.ibb.co/84qQR4p/Rectangle-10.png" alt="dress" />
+                        <img class="w-full rounded-xl" src="/uploads/{{ $member->gambar_member }}" alt="dress" />
                     </div>
                 </a>
             </li>
