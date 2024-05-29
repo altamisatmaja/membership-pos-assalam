@@ -21,8 +21,9 @@
                 </p>
             @endif
             <div class="my-5">
-                <form action="{{ route('customer.member.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('customer.dashboard.edit') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="w-full">
                         <div class="mb-5">
                             <label for="nomor_pas" class="mb-3 block text-lg font-semibold text-gray-800">
