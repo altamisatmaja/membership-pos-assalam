@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script defer src="{{ asset('js/alpine.min.js') }}"></script>
-    <title>Assalam | Login admin</title>
-</head>
-<body>
-    <section class="bg-gray-50 ">
+@extends('includes.app')
+
+@section('title', 'Admin | Login')
+
+@section('content')
+    <section class="bg-white ">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
                 <img class=" h-8 mr-2" src="{{ asset('images/logoassalam.png') }}" alt="logo">
@@ -36,5 +30,6 @@
             </div>
         </div>
       </section>
-</body>
-</html>
+      @endsection
+      @push('js')
+      @endpush

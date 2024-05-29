@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logoassalam.png') }}" />
     <script defer src="{{ asset('js/alpine.min.js') }}"></script>
     <title>@yield('title')</title>
 </head>

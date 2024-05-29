@@ -1,6 +1,6 @@
 @extends('includes.app')
 
-@section('title', 'Dashboard | Pelanggan')
+@section('title', 'Assalam | Login')
 
 @section('content')
     <section class="bg-white">

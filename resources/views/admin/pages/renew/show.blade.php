@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Assalam | Member')
+@section('title', 'Assalam | Aktivasi')
 
 @section('content')
     <div class="pt-6 px-4">
