@@ -12,10 +12,10 @@
             </div>
             <div class="flex flex-col justify-center">
                 <h1 class="text-2xl font-semibold text-center text-gray-800 mt-8">Pendaftaran Kartu
-                <h1 class="text-2xl font-semibold text-center text-gray-800 mt-8 mb-6">Member Assalam Hypermarket
-                </h1>
+                    <h1 class="text-2xl font-semibold text-center text-gray-800 mt-8 mb-6">Member Assalam Hypermarket
+                    </h1>
             </div>
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -23,13 +23,13 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
 
-            @if (session('error'))
+            {{-- @if (session('error'))
                 <p>
                     {{ session('error') }}
                 </p>
-            @endif
+            @endif --}}
             <div class="my-10">
                 <form action="{{ route('customer.member.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -38,12 +38,17 @@
                             <label for="nomor_pas" class="mb-3 block text-lg font-semibold text-gray-800">
                                 Nomor PAS
                                 <div class="">
-                                    <span class="font-medium text-base text-gray-600">Silahkan diisi sesuai nomor pas anda apabila sudah terdaftar. Apabila belum
+                                    <span class="font-medium text-base text-gray-600">Silahkan diisi sesuai nomor pas anda
+                                        apabila sudah terdaftar. Apabila belum
                                         memiliki nomor pas, silahkan dikosongkan</span>
                                 </div>
                             </label>
                             <input type="text" name="nomor_pas" id="nomor_pas" placeholder="Nomor pas anda"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                            @error('nomor_pas')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+
                         </div>
                     </div>
                     <div class="-mx-3 flex flex-wrap">
@@ -54,6 +59,9 @@
                                 </label>
                                 <input type="text" name="nama_member" id="nama_member" placeholder="Nama anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('nama_member')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -64,6 +72,9 @@
                                 <input type="text" name="kewarganegaraan" id="kewarganegaraan"
                                     placeholder="Masukkan kewarganegaraan anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('kewarganegaraan')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -75,6 +86,9 @@
                                 </label>
                                 <input type="text" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat lahir anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('tempat_lahir')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -84,6 +98,9 @@
                                 </label>
                                 <input type="date" name="tanggal_lahir" id="tanggal_lahir"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('tanggal_lahir')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -98,6 +115,9 @@
                                     <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
+                                @error('jenis_kelamin')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -114,6 +134,9 @@
                                     <option value="Budha">Budha</option>
                                     <option value="Konghucu">Konghucu</option>
                                 </select>
+                                @error('agama')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -123,26 +146,41 @@
                             <select name="provinsi" id="provinsi" class="provinsi border p-2  py-4 px-6 rounded w-full">
                                 <option data-id="1" value="JAWA TIMUR">Pilih provinsi</option>
                             </select>
+                            @error('provinsi')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
                             <label for="kabupaten">Kabupaten *</label>
-                            <select disabled name="kabupaten" id="kabupaten" class="kabupaten border py-4 px-6 p-2 rounded w-full">
+                            <select disabled name="kabupaten" id="kabupaten"
+                                class="kabupaten border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="KAB. NGAWI">Pilih kabupaten</option>
                             </select>
+                            @error('kabupaten')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="kecamatan">Kecamatan *</label>
-                            <select disabled name="kecamatan" id="kecamatan" class="kecamatan border py-4 px-6 p-2 rounded w-full">
+                            <select disabled name="kecamatan" id="kecamatan"
+                                class="kecamatan border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="Paron">Pilih kecamatan</option>
                             </select>
+                            @error('kecamatan')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div>
                             <label for="kelurahan">kelurahan *</label>
-                            <select disabled name="kelurahan" id="kelurahan" class="kelurahan border py-4 px-6 p-2 rounded w-full">
+                            <select disabled name="kelurahan" id="kelurahan"
+                                class="kelurahan border py-4 px-6 p-2 rounded w-full">
                                 <option data-id="1" value="1">Pilih kelurahan</option>
                             </select>
+                            @error('kelurahan')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="-mx-3 flex flex-wrap">
@@ -153,6 +191,9 @@
                                 </label>
                                 <input type="text" name="alamat" id="alamat" placeholder="Tempat lahir anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('alamat')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -162,6 +203,9 @@
                                 </label>
                                 <input type="text" name="rt_rw" id="rt_rw" placeholder="Masukkan rt rw Anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('rt_rw')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -169,10 +213,13 @@
                         <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
                                 <label for="kode_zip" class="mb-3 block text-lg font-semibold text-gray-800">
-                                    Post code
+                                    Kode POS Alamat
                                 </label>
                                 <input type="text" name="kode_zip" id="kode_zip" placeholder="Tempat lahir anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('kode_zip')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -182,6 +229,9 @@
                                 </label>
                                 <input type="text" name="no_hp" id="no_hp" placeholder="Masukkan no telp Anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('no_hp')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -197,6 +247,9 @@
                                     <option value="Single">Single</option>
                                     <option value="Kawin">Kawin</option>
                                 </select>
+                                @error('status_member')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -206,6 +259,9 @@
                                 </label>
                                 <input type="text" name="no_telp" id="no_telp" placeholder="Masukkan rt rw Anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('no_telp')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -219,6 +275,9 @@
                                 <input type="number" name="jumlah_tanggungan" id="jumlah_tanggungan"
                                     placeholder="Tempat lahir anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('jumlah_tanggungan')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -229,6 +288,9 @@
                                 <input type="number" name="pendapatan_bulanan" id="pendapatan_bulanan"
                                     placeholder="Masukkan rt rw Anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('pendapatan_bulanan')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -244,6 +306,9 @@
                                     <option value="1">Ya</option>
                                     <option value="0">Tidak</option>
                                 </select>
+                                @error('kena_pajak')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
@@ -253,6 +318,9 @@
                                 </label>
                                 <input type="text" name="npwp" id="npwp" placeholder="Masukkan rt rw Anda"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                @error('npwp')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>

@@ -42,6 +42,26 @@ class MemberPelangganController extends Controller
                 'nomor_pas' => 'min:11',
             ], [
                 'nomor_pas' => 'Minimal nomor pas harus 11',
+                'gambar_member' => 'Wajib diisi',
+                'nama_member' => 'Wajib diisi',
+                'kewarganegaraan' => 'Wajib diisi',
+                'tempat_lahir' => 'Wajib diisi',
+                'tanggal_lahir' => 'Wajib diisi',
+                'jenis_kelamin' => 'Wajib diisi',
+                'agama' => 'Wajib diisi',
+                'alamat' => 'Wajib diisi',
+                'provinsi' => 'Wajib diisi',
+                'kabupaten' => 'Wajib diisi',
+                'kecamatan' => 'Wajib diisi',
+                'kelurahan' => 'Wajib diisi',
+                'rt_rw' => 'Wajib diisi',
+                'kode_zip' => 'Wajib diisi',
+                'no_hp' => 'Wajib diisi',
+                'no_telp' => 'Wajib diisi',
+                'status_member' => 'Wajib diisi',
+                'jumlah_tanggungan' => 'Wajib diisi',
+                'pendapatan_bulanan' => 'Wajib diisi',
+                'kena_pajak' => 'Wajib diisi',
             ]);
 
             // dd($request->all());
