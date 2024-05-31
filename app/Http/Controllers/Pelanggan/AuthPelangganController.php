@@ -20,25 +20,15 @@ class AuthPelangganController extends Controller
             $request->authenticate();
             $request->session()->regenerate();
 
-            $redirectTo = '';
-
             if (Auth::check()) {
-                switch (Auth::user()->role) {
-                    case 'Pelanggan':
-                        $redirectTo = 'customer.dashboard';
-                        break;
+                if (Auth::user()->role == 'Pelanggan') {
+                    return redirect()->route('');
+                } else {
+                    return redirect()->back();
                 }
-            } else {
-                $loginRoute = '';
-                switch ($request->input('role')) {
-                    case 'Pelanggan':
-                        $loginRoute = 'customer.login';
-                        break;
-                }
-                return redirect()->route($loginRoute)->with('status', 'Username atau password salah.');
             }
 
-            return redirect()->route($redirectTo);
+            return redirect()->back()->with('status', 'Terjadi kesalahan. Mohon coba lagi.');  // Kembali ke halaman sebelumnya jika autentikasi gagal
         } catch (\Exception $e) {
             return redirect()->back()->with('status', 'Terjadi kesalahan ' . $e->getMessage());
         }

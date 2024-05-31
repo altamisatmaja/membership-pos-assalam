@@ -40,6 +40,7 @@ Route::get('belanja', [PagesController::class, 'shop'])->name('pages.shop');
 Route::get('membership', [PagesController::class, 'membership'])->name('pages.membership');
 Route::get('pre-membership', [PagesController::class, 'pre_membership'])->name('pages.pre-membership');
 Route::get('tentang', [PagesController::class, 'about'])->name('pages.about');
+Route::post('pelanggan/member/store', [MemberPelangganController::class, 'store'])->name('customer.member.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -99,8 +100,6 @@ Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
     Route::put('pelanggan/personal/edit', [DashboardPelangganController::class, 'edit'])->name('customer.dashboard.edit');
     Route::get('pelanggan/personal/barcode', [DashboardPelangganController::class, 'barcode'])->name('customer.dashboard.barcode');
 
-    Route::post('pelanggan/member/store', [MemberPelangganController::class, 'store'])->name('customer.member.store');
-
     Route::get('pelanggan/logout', [AuthPelangganController::class,'logout'])->name('pelanggan.logout');
 });
 
@@ -108,6 +107,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
     Route::get('admin/dashboard/member', [MemberAdminController::class, 'index'])->name('admin.dashboard.member');
+    Route::get('admin/dashboard/search', [MemberAdminController::class, 'seacrh'])->name('admin.dashboard.member.search');
 
     Route::get('admin/dashboard/activate', [ActivateAdminController::class, 'index'])->name('admin.dashboard.activate');
     Route::get('admin/dashboard/activate/{nomor_pas}', [ActivateAdminController::class, 'show'])->name('admin.dashboard.activate.show');

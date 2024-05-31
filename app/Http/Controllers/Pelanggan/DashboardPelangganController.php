@@ -15,7 +15,11 @@ class DashboardPelangganController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $member = $user->member;
+        $member = '';
+
+        if($user->member != NULL){
+            $member = $user->member;
+        }
         return view('pelanggan.dashboard', compact('member', 'user'));
     }
 

@@ -55,8 +55,8 @@
                             $value = $value ? 'Iya' : 'Tidak';
                         }
 
-                        if($field === 'pendapatan_bulanan'){
-                            $value = 'Rp '.number_format($value,0,',','.');
+                        if ($field === 'pendapatan_bulanan') {
+                            $value = 'Rp ' . number_format(floatval($value), 0, ',', '.');
                         }
 
                     @endphp
