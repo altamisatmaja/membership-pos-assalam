@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6bd754e261e5a4b69e6b25a025f6682",
+    "content-hash": "bb7dbdf0c853da55caca1424aab92cbe",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2103,20 +2103,20 @@
         },
         {
             "name": "milon/barcode",
-            "version": "v11.0.0",
+            "version": "8.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/milon/barcode.git",
-                "reference": "1f4031adb52146bb7fbe88ef42214011376f9cbe"
+                "reference": "a1b1ee1a743c1368597f1742e6ee4765333a15a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/milon/barcode/zipball/1f4031adb52146bb7fbe88ef42214011376f9cbe",
-                "reference": "1f4031adb52146bb7fbe88ef42214011376f9cbe",
+                "url": "https://api.github.com/repos/milon/barcode/zipball/a1b1ee1a743c1368597f1742e6ee4765333a15a1",
+                "reference": "a1b1ee1a743c1368597f1742e6ee4765333a15a1",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^7.0|^8.0|^9.0|^10.0 | ^11.0",
+                "illuminate/support": "^8.0",
                 "php": "^7.3 | ^8.0"
             },
             "type": "library",
@@ -2161,11 +2161,11 @@
             ],
             "support": {
                 "issues": "https://github.com/milon/barcode/issues",
-                "source": "https://github.com/milon/barcode/tree/v11.0.0"
+                "source": "https://github.com/milon/barcode/tree/8.0.1"
             },
             "funding": [
                 {
-                    "url": "https://paypal.me/nuruzzamanmilon",
+                    "url": "https://paypal.me/tomilon",
                     "type": "custom"
                 },
                 {
@@ -2173,7 +2173,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-28T18:14:32+00:00"
+            "time": "2021-01-08T11:36:07+00:00"
         },
         {
             "name": "monolog/monolog",

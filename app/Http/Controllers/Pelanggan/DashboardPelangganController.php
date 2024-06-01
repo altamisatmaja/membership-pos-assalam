@@ -33,9 +33,10 @@ class DashboardPelangganController extends Controller
     public function barcode(){
 
         $user = Auth::user();
-        $member = $user->member;
+        $member = Member::where("id_user", $user->id)->first();
+        $nomor_pas = $member->nomor_pas;
 
-        return view('pelanggan.pages.barcode.index', compact('user', 'member'));
+        return view('pelanggan.pages.barcode.index', compact('user', 'member', 'nomor_pas'));
     }
 
     public function edit(Request $request)

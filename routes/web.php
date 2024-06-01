@@ -39,7 +39,7 @@ Route::get('/', [PagesController::class, 'index'])->name('pages.home');
 Route::get('belanja', [PagesController::class, 'shop'])->name('pages.shop');
 Route::get('pre-membership', [PagesController::class, 'pre_membership'])->name('pages.pre-membership');
 Route::get('tentang', [PagesController::class, 'about'])->name('pages.about');
-
+Route::post('pelanggan/member/store', [MemberPelangganController::class, 'store'])->name('customer.member.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -95,7 +95,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
     Route::get('membership', [PagesController::class, 'membership'])->name('pages.membership');
-    Route::post('pelanggan/member/store', [MemberPelangganController::class, 'store'])->name('customer.member.store');
+
 });
 
 Route::middleware(['auth', 'role:Pelanggan', 'verified', 'ensure.member'])->group(function () {

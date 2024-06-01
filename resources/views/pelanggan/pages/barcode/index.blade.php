@@ -7,7 +7,8 @@
         <div class="shadow-md rounded-lg bg-white p-4">
             <h1 class="text-2xl font-bold mb-2">QR untuk pembayaran</h1>
             <div class="mt-7" id="qrcode-container">
-                {!! QrCode::size(300)->generate(json_encode($member)) !!}
+                {!! DNS1D::getBarcodeSVG($nomor_pas, 'EAN8', 5, 100) !!}
+                <p class="items-center flex items-center justify-center">{{ $member->nama_member }}</p>
             </div>
             <button id="download-button"
                 class="bg-green-800 w-full hover:bg-green-700 text-white font-bold py-2 px-4 rounded my-2 mt-5">
