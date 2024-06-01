@@ -8,7 +8,7 @@
             <div class="flex flex-col justify-center">
                 <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">TENTANG KAMI
                 </h1>
-                <div class="flex flex-col">
+                <div class="flex flex-col shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] px-10">
                     <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">SEJARAH
                     </h1>
                     <p class="text-md text-lg font-medium text-gray-600">Assalaam Hypermarket merupakan salah satu unit
@@ -42,30 +42,32 @@
                         </li>
                     </ul>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] px-10 my-10">
                     <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">VISI
                     </h1>
-                    <p class="text-md text-lg font-medium text-gray-600">Menjadi perusahaan retail/distribusi consumer goods
+                    <p class="text-md text-lg font-medium text-gray-600 pb-5">Menjadi perusahaan retail/distribusi consumer goods
                         terbaik untuk memenuhi kebutuhan masyarakat luas yang dikelola secara islami dan profesional.
                     </p>
                 </div>
-                <div class="flex flex-col">
-                    <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">MISI
+                <div class="flex flex-col shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] px-10 my-10">
+                    <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 my-5">MISI
                     </h1>
-                    <div class="mt-8 px-10 text-gray-600">
-                        <ul class="list-disc px-10 pt-5">
-                            <li>Memberikan kepuasan kepada masyarakat dengan layanan yang amanah serta produk yang berkualitas.
+                    <div class="px-10 text-gray-600 pb-10">
+                        <ul class="list-disc px-10">
+                            <li>Memberikan kepuasan kepada masyarakat dengan layanan yang amanah serta produk yang
+                                berkualitas.
                             </li>
-                            <li>Menjadi partner yang strategis dan membawa kemanfaatan bagi para pelanggan, pemasok, karyawan, dan seluruh stakeholder yang terlibat.
+                            <li>Menjadi partner yang strategis dan membawa kemanfaatan bagi para pelanggan, pemasok,
+                                karyawan, dan seluruh stakeholder yang terlibat.
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] px-10 my-10">
                     <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">NILAI - NILAI
 
                     </h1>
-                    <div class="mt-8 px-10 text-gray-600">
+                    <div class="px-10 text-gray-600 pb-10">
                         <ul class="list-disc px-10 pt-5">
                             <li>Integritas
                             </li>
@@ -78,16 +80,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] px-10 my-10">
                     <h1 class="text-2xl uppercase font-semibold text-center text-gray-800 mt-8 mb-6">KONTAK KAMI
                     </h1>
-                    <div class="mt-8 px-10 text-gray-600">
+                    <div class="px-10 text-gray-600 pb-10">
                         <ul class="list-disc px-10 pt-5">
-                            <li>Call Center : <span class="text-blue-700 cursor-pointer hover:text-blue-900">0271-743333</span>
+                            <li>Call Center : <span
+                                    class="text-blue-700 cursor-pointer hover:text-blue-900">0271-743333</span>
                             </li>
-                            <li>WA Customer Care : <span class="text-blue-700 cursor-pointer hover:text-blue-900">0812 2604 8447</span>
+                            <li>WA Customer Care : <span class="text-blue-700 cursor-pointer hover:text-blue-900">0812 2604
+                                    8447</span>
                             </li>
-                            <li>Email : <span class="text-blue-700 cursor-pointer hover:text-blue-900">assalaam.hypermarket@gmail.com</span>
+                            <li>Email : <span
+                                    class="text-blue-700 cursor-pointer hover:text-blue-900">assalaam.hypermarket@gmail.com</span>
                             </li>
                         </ul>
                     </div>
