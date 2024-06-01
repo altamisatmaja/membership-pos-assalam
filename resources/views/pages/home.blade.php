@@ -3,6 +3,35 @@
 @section('title', 'Assalam | Beranda')
 
 @section('content')
+    @if (session('error'))
+        <div id="Message"
+            class="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur-md bg-white/30 bg-opacity-50 z-50">
+            <div class="relative w-full max-w-screen-md rounded-lg bg-red-500 px-4 py-4 text-base text-white"
+                data-dismissible="alert">
+                <div class="absolute top-4 left-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm-80-240v-480h160v480H400Z"/></svg>
+                </div>
+                <div class="ml-8 mr-12">
+                    <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-white antialiased">
+                        Gagal
+                    </h5>
+                    <p class="mt-2 block font-sans text-base font-normal leading-relaxed text-white antialiased">
+                        {{ session('error') }}
+                    </p>
+                </div>
+                <div data-dismissible-target="alert" data-ripple-dark="true" id="successMessage"
+                    class="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
+                    <div role="button" class="w-max rounded-lg p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div>
         <div class="relative w-full h-screen" id="home">
             <div class="absolute inset-0 opacity-70">
@@ -95,6 +124,16 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            var Message = document.getElementById('Message');
+            successMessage.addEventListener('click', function() {
+                Message.style.display = 'none';
+            });
+        });
+    </script>
 @endsection
 @push('js')
 @endpush

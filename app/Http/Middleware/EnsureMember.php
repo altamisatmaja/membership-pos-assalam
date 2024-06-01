@@ -16,8 +16,8 @@ class EnsureMember
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->user()->member) {
-            return redirect()->route('pages.home')->with('error', 'Anda harus memiliki anggota untuk mengakses dashboard.');
+        if (!$request->user()->member->status != 'Aktif') {
+            return redirect()->route('pages.home')->with('error', 'Anda belum terdaftar sebagai member di AssalamHypermarket.');
         }
 
         return $next($request);

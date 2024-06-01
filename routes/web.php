@@ -94,7 +94,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::middleware(['auth', 'role:Pelanggan', 'verified'])->group(function () {
+Route::middleware(['auth', 'role:Pelanggan', 'verified', 'ensure.member'])->group(function () {
     Route::get('pelanggan/personal', [DashboardPelangganController::class, 'index'])->name('customer.dashboard');
     Route::get('pelanggan/personal/update', [DashboardPelangganController::class, 'update'])->name('customer.dashboard.update');
     Route::put('pelanggan/personal/edit', [DashboardPelangganController::class, 'edit'])->name('customer.dashboard.edit');
