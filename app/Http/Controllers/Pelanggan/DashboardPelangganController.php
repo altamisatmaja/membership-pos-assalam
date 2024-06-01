@@ -15,11 +15,12 @@ class DashboardPelangganController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $member = '';
+        $member = Member::where("id_user", $user->id)->first();
+        // dd(auth()->user()->member->status == 'Aktif');
 
-        if($user->member != NULL){
-            $member = $user->member;
-        }
+        // if($member != NULL){
+        //     $member = $user->member;
+        // }
         return view('pelanggan.dashboard', compact('member', 'user'));
     }
 

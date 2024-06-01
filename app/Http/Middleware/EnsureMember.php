@@ -16,8 +16,12 @@ class EnsureMember
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->user()->member->status != 'Aktif') {
+        if (auth()->user()->member == NULL) {
             return redirect()->route('pages.home')->with('error', 'Anda belum terdaftar sebagai member di AssalamHypermarket.');
+        }
+
+        if (auth()->user()->member->status != 'Aktif') {
+            return redirect()->route('pages.home')->with('error', 'Anda belum divalidasi sebagai member di AssalamHypermarket.');
         }
 
         return $next($request);
