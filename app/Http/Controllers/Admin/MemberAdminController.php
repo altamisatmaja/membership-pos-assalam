@@ -16,7 +16,8 @@ class MemberAdminController extends Controller
 
     public function seacrh(Request $request){
         $user = auth()->user();
-        $members = DB::table('member')->where('nama_member', 'like', "%".$request->nama_member."%")->get();
-        return view('admin.pages.membr.index', compact('members'));
+        $members = Member::with('user')->where('nama_member', 'like', "%".$request->nama_member."%")->get();
+
+        return view('admin.pages.member.index', compact('members'));
     }
 }
