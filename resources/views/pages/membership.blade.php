@@ -415,6 +415,8 @@
                                     </span>
                                 </div>
                             </label>
+                            <div id="image-preview" class="mt-4"></div>
+                            <span id="file-error" class="text-red-500"></span>
                         </div>
                     </div>
 
@@ -435,6 +437,26 @@
             var Message = document.getElementById('Message');
             successMessage.addEventListener('click', function() {
                 Message.style.display = 'none';
+            });
+        });
+
+        $(document).ready(function() {
+            $('#gambar_member').change(function(e) {
+                var fileName = e.target.files[0].name;
+                var fileExt = fileName.split('.').pop();
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image-preview').html(`
+                    <div class="mb-5 rounded-md border border-[#e0e0e0] py-4 px-8">
+                        <div class="flex items-center justify-between">
+                            <span class="truncate pr-3 text-base font-medium text-textbase">
+                            ${fileName}
+                            </span>
+                        </div>
+                    </div>
+                    `);
+                };
+                reader.readAsDataURL(this.files[0]);
             });
         });
     </script>
