@@ -134,7 +134,7 @@ class MemberPelangganController extends Controller
             }
 
             $input['id_user'] = $user->id;
-            $input['masa_aktif'] = now()->addYear();
+            // $input['masa_aktif'] = now()->addYear();
 
             // dd($input);
             Member::create($input);

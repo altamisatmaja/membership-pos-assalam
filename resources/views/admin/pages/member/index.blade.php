@@ -6,83 +6,92 @@
     <div class="pt-6 px-4">
 
         <section class="container px-4 mx-auto">
-            <div class="flex flex-col">
-                <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                        <div class="overflow-hidden border border-gray-200  md:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50 ">
+            <form class="flex items-center mb-4">
+                <label for="voice-search" class="sr-only">Search</label>
+                <div class="relative w-full">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos, Design Templates..." required>
+                </div>
+                <button type="submit" class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-green-700 rounded-lg border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search</button>
+            </form>
+            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                    <div class="overflow-hidden border border-gray-200  md:rounded-lg">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50 ">
+                                <tr>
+                                    <th scope="col"
+                                        class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        <div class="flex items-center gap-x-3">
+                                            <button class="flex items-center gap-x-2">
+                                                <span>No</span>
+                                            </button>
+                                        </div>
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Nomor PAS
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Nama Lengkap
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Kontak
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Email
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Alamat
+                                    </th>
+
+                                    <th scope="col"
+                                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200 ">
+                                @foreach ($members as $member)
                                     <tr>
-                                        <th scope="col"
-                                            class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            <div class="flex items-center gap-x-3">
-                                                <button class="flex items-center gap-x-2">
-                                                    <span>No</span>
-                                                </button>
+                                        <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                            <div class="inline-flex items-center gap-x-3">
+                                                <span>{{ $loop->iteration }}</span>
                                             </div>
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Nomor PAS
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Nama Lengkap
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Kontak
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Email
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Alamat
-                                        </th>
-
-                                        <th scope="col"
-                                            class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                            Status
-                                        </th>
+                                        </td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->nomor_pas }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->nama_member }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->no_hp }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->user->email }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->provinsi }}, {{ $member->kabupaten }}, {{ $member->kecamatan }},
+                                            {{ $member->kelurahan }}, {{ $member->rt_rw }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                            {{ $member->status }}</td>
                                     </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200 ">
-                                    @foreach ($members as $member)
-                                        <tr>
-                                            <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                <div class="inline-flex items-center gap-x-3">
-                                                    <span>{{ $loop->iteration }}</span>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $member->nomor_pas }}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $member->nama_member }}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $member->no_hp }}</td>
-                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                    {{ $member->user->email }}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $member->provinsi }}, {{ $member->kabupaten }}, {{ $member->kecamatan }},
-                                                {{ $member->kelurahan }}, {{ $member->rt_rw }}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                {{ $member->status }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </section>
+    </div>
+    </section>
 
     </div>
     @push('js')

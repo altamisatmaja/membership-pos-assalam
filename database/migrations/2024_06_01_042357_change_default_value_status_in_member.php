@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeColoumnInTableMember extends Migration
+class ChangeDefaultValueStatusInMember extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,6 @@ class ChangeColoumnInTableMember extends Migration
     public function up()
     {
         Schema::table('member', function (Blueprint $table) {
-            $table->string('status_member');
             DB::statement("ALTER TABLE `member` MODIFY `status` ENUM('Aktif', 'Nonaktif') DEFAULT 'Nonaktif'");
         });
     }

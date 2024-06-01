@@ -23,7 +23,7 @@
             <a href="/"
                 class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Home
             </a>
-            <a href="{{ route('pages.shop') }}"
+            <a href="https://assalaammarket.com/shop/" target="_blank"
                 class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Belanja
             </a>
             <a href="{{ route('pages.pre-membership') }}"
@@ -40,7 +40,7 @@
             <a href="/"
                 class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Home
             </a>
-            <a href="{{ route('pages.shop') }}"
+            <a href="https://assalaammarket.com/shop/" target="_blank"
                 class="block md:inline-block md:text-semibold hover:text-green-800 px-3 py-3 md:border-none">Belanja
             </a>
             <a href="{{ route('pages.pre-membership') }}"

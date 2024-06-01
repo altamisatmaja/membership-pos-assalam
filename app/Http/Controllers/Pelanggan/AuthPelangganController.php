@@ -22,9 +22,9 @@ class AuthPelangganController extends Controller
 
             if (Auth::check()) {
                 if (Auth::user()->role == 'Pelanggan') {
-                    return redirect()->route('');
+                    return redirect()->route('pages.home');
                 } else {
-                    return redirect()->back();
+                    return redirect()->route('pages.home');
                 }
             }
 
