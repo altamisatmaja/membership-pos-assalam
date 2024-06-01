@@ -68,7 +68,7 @@
         @endauth
         @guest
             <div class="flex flex-wrap gap-x-5 justify-end">
-                <a href="{{ route('customer.login') }}"
+                <a href="{{ route('login') }}"
                     class="px-5 ring-1 ring-green-800 text-white bg-green-800 py-2 rounded-lg transition-all duration-150">Login</a>
                 <a href="{{ route('register') }}"
                     class="px-5 ring-1 ring-green-800 text-green-800 py-2 rounded-lg transition-all duration-150">Register</a>

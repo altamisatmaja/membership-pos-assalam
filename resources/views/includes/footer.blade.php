@@ -16,7 +16,7 @@
             <h2 class="text-xl font-bold mb-4 uppercase">EXTRA LINKS</h2>
             <ul>
                 <li><a href="{{ route('pages.shop') }}" class="block hover:text-green-500">Belanja</a></li>
-                <li><a href="{{ route('customer.login') }}" class="block hover:text-green-500">Login</a></li>
+                <li><a href="{{ route('login') }}" class="block hover:text-green-500">Login</a></li>
                 <li><a href="{{ route('register') }}" class="block hover:text-green-500">Register</a></li>
             </ul>
         </div>

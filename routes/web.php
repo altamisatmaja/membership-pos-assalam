@@ -51,10 +51,10 @@ Route::get('admin/login', [AuthAdminController::class, 'index'])->name('admin.lo
 Route::post('admin/login', [AuthAdminController::class, 'login'])->name('admin.login.store');
 
 Route::middleware('guest')->group(function () {
-    Route::get('login', [AuthPelangganController::class, 'index'])->name('customer.login');
+    Route::get('login', [AuthPelangganController::class, 'index'])->name('login');
     Route::post('login/store', [AuthPelangganController::class, 'login'])->name('customer.login.store');
 
-    Route::get('register', [RegisterPelangganController::class, 'index'])
+    Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
@@ -94,7 +94,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
+Route::middleware(['auth', 'role:Pelanggan', 'verified'])->group(function () {
     Route::get('pelanggan/personal', [DashboardPelangganController::class, 'index'])->name('customer.dashboard');
     Route::get('pelanggan/personal/update', [DashboardPelangganController::class, 'update'])->name('customer.dashboard.update');
     Route::put('pelanggan/personal/edit', [DashboardPelangganController::class, 'edit'])->name('customer.dashboard.edit');

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Date;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -21,6 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'email_verified_at',
     ];
 
     /**
@@ -45,4 +48,20 @@ class User extends Authenticatable implements MustVerifyEmail
     public function member(){
         return $this->hasOne(Member::class, 'id_user', 'id');
     }
+
+    public function markEmailAsVerified()
+    {
+        if ($this->hasVerifiedEmail()) {
+            return false;
+        }
+
+        $this->forceFill([
+            'email_verified_at' => Date::now(),
+        ])->save();
+
+        event(new Verified($this));
+
+        return true;
+    }
+
 }

@@ -66,7 +66,7 @@
                         <button type="submit"
                             class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Daftar</button>
                         <p class="text-sm font-light text-gray-500 ">
-                            Sudah punya akun? <a href="{{ route('customer.login') }}"
+                            Sudah punya akun? <a href="{{ route('login') }}"
                                 class="font-medium text-green-600 hover:underline ">Login</a>
                         </p>
                     </form>
