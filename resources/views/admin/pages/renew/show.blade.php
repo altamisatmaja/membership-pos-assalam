@@ -6,7 +6,7 @@
     <div class="pt-6 px-4">
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
             <h1 class="text-2xl font-bold mb-2">Aktivasi member</h1>
-            <form action="{{ route('admin.dashboard.activate.update', $member->nomor_pas) }}" method="POST">
+            <form action="{{ route('admin.dashboard.activate.update', $member->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="-mx-3 md:flex mb-6">
@@ -25,6 +25,9 @@
                         <input
                             class="appearance-none text-gray-600 w-full bg-grey-lighter  border border-grey-lighter rounded py-3 px-4"
                             id="nomor_pas" name="nomor_pas" type="text" value="{{ $member->nomor_pas }}">
+                            @error('nomor_pas')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                     </div>
                 </div>
                 <div class="-mx-3 md:flex mb-3">

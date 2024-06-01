@@ -44,7 +44,7 @@
             <h2 class="text-6xl font-semibold text-black">-- PROMO --</h2>
             <p class="text-3xl font-semibold text-green-800">ASSALAM HYPERMARKET</p>
         </div>
-        <div class=" flex items-center justify-center">
+        <div class=" flex items-center justify-center py-16">
             <div class="container mx-auto">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
                     <div class="bg-white rounded-lg border border-black p-4 content-between grid grid-cols-1">

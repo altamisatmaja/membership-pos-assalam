@@ -127,7 +127,7 @@
                                                     <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                                                         {{ $member->no_hp }}</td>
                                                     <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                        {{ $member->user->email }}</td>
+                                                        {{ optional($member->user)->email }}</td>
                                                     <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                                                         {{ $member->provinsi }}, {{ $member->kabupaten }},
                                                         {{ $member->kecamatan }},

@@ -1,4 +1,4 @@
-<footer class="w-full text-black py-8 bg-white pt-20">
+<footer class="w-full text-black py-8 bg-white pt-20 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_64px] px-10">
 
     <div class="container mx-auto flex flex-wrap justify-between">
         <!-- Colonne 1 -->

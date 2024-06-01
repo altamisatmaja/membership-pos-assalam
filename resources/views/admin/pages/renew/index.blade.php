@@ -152,7 +152,7 @@
                                                 </p>
                                             </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                                <a href="{{ route('admin.dashboard.activate.show', $member->nomor_pas) }}">
+                                                <a href="{{ route('admin.dashboard.activate.show', $member->id) }}">
                                                     <p class="bg-green-500 px-4 py-2 rounded-lg text-white text-center">
                                                         Aktivasi</p>
                                                 </a>

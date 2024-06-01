@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 class DashboardAdminController extends Controller
 {
     public function index(){
-        $members = Member::orderBy('created_at')->take(10)->get();
+        $members = Member::with('user')->orderBy('created_at')->take(10)->get();
 
         $member = Member::get();
         $total_member = count($member);
