@@ -27,11 +27,10 @@ class ActivateAdminController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'nomor_pas' => 'required|integer|min:10',
+                'nomor_pas' => 'required|min:10',
             ], [
                 'nomor_pas.required' => 'Wajib diisi',
                 'nomor_pas.min' => 'Minimal karakter 11',
-                'nomor_pas.integer' => 'Harus berupa angka'
             ]);
 
             if ($validator->fails()) {
