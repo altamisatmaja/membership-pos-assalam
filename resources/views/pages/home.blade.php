@@ -33,14 +33,14 @@
         </div>
     @endif
     <div>
-        <div class="relative w-full h-screen" id="home">
-            <div class="absolute inset-0 opacity-70">
-                <img src="https://image1.jdomni.in/banner/13062021/0A/52/CC/1AF5FC422867D96E06C4B7BD69_1623557926542.png"
+        <div class="relative w-full" id="home">
+            <div class="relative w-full aspect-w-16 aspect-h-9">
+                <img src="https://assalaammarket.com/wp-content/uploads/2023/01/Template-Slider-1.jpg"
                     alt="Background Image" class="object-cover object-center w-full h-full" />
-
             </div>
         </div>
-        <div class="w-full flex flex-col justify-center items-center my-10 gap-y-3">
+
+        <div class="w-full flex flex-col justify-center items-center gap-y-3 mt-10">
             <h2 class="text-6xl font-semibold text-black">-- PROMO --</h2>
             <p class="text-3xl font-semibold text-green-800">ASSALAM HYPERMARKET</p>
         </div>

@@ -88,7 +88,7 @@ class DashboardPelangganController extends Controller
 
         $member->update($input);
 
-        return redirect()->back()->with('success', 'Pendaftaran berhasil, silahkan menghubungi CS untuk diverifikasi');
+        return redirect()->back()->with('success', 'Update profile berhasil');
     } catch (\Exception $e) {
         return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
     }
