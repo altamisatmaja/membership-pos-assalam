@@ -115,6 +115,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
 
     Route::get('admin/dashboard/member', [MemberAdminController::class, 'index'])->name('admin.dashboard.member');
     Route::get('admin/dashboard/search', [MemberAdminController::class, 'seacrh'])->name('admin.dashboard.member.search');
+    Route::get('admin/dashboard/member/{nomor_pas}', [MemberAdminController::class, 'show'])->name('admin.dashboard.member.show');
 
     Route::get('admin/dashboard/activate', [ActivateAdminController::class, 'index'])->name('admin.dashboard.activate');
     Route::get('admin/dashboard/activate/{id}', [ActivateAdminController::class, 'show'])->name('admin.dashboard.activate.show');

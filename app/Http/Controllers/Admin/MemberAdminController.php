@@ -20,4 +20,10 @@ class MemberAdminController extends Controller
 
         return view('admin.pages.member.index', compact('members'));
     }
+
+    public function show($nomor_pas){
+        $members = Member::where('nomor_pas', $nomor_pas)->first();
+
+        return view('admin.pages.member.show', compact('members'));
+    }
 }

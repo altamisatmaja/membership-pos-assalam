@@ -3,6 +3,24 @@
 @section('title', 'Admin | Login')
 
 @section('content')
+    @if (session('status'))
+        <div
+            class='flex items-center text-white w-full sm:max-w-md bg-red-400 shadow-md rounded-lg overflow-hidden mx-auto mb-7'>
+            <div class='w-10 border-r px-2'>
+                <svg class="flex-shrink-0 w-6 h-6 text-white transition duration-75 group-hover:text-white"
+                    xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path clip-rule="evenodd" fill-rule="white" fill="white"
+                        d="M109-120q-11 0-20-5.5T75-140q-5-9-5.5-19.5T75-180l370-640q6-10 15.5-15t19.5-5q10 0 19.5 5t15.5 15l370 640q6 10 5.5 20.5T885-140q-5 9-14 14.5t-20 5.5H109Zm69-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm0-120q17 0 28.5-11.5T520-400v-120q0-17-11.5-28.5T480-560q-17 0-28.5 11.5T440-520v120q0 17 11.5 28.5T480-360Zm0-100Z" />
+                </svg>
+            </div>
+
+            <div class='flex items-center px-2 py-3'>
+                <div class='mx-3'>
+                    <p>{{ session('status') }}</p>
+                </div>
+            </div>
+        </div>
+    @endif
     <section class="bg-white ">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
