@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ActivateAdminController;
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\MemberAdminController;
+use App\Http\Controllers\Admin\ProfileAdminController;
 use App\Http\Controllers\Pelanggan\AcocuntPelangganController;
 use App\Http\Controllers\Pelanggan\AuthPelangganController;
 use App\Http\Controllers\Pelanggan\DashboardPelangganController;
@@ -53,10 +54,10 @@ Route::middleware('guest')->group(function () {
     Route::get('login', [AuthPelangganController::class, 'index'])->name('login');
     Route::post('login/store', [AuthPelangganController::class, 'login'])->name('customer.login.store');
 
-    Route::get('register', [RegisteredUserController::class, 'create'])
+    Route::get('register', [RegisterPelangganController::class, 'index'])
                 ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::post('register', [RegisterPelangganController::class, 'store'])->name('pelanggan.register');
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
@@ -98,7 +99,7 @@ Route::middleware(['auth', 'role:Pelanggan'])->group(function () {
 
 });
 
-Route::middleware(['auth', 'role:Pelanggan', 'verified', 'ensure.member'])->group(function () {
+Route::middleware(['auth', 'role:Pelanggan', 'ensure.member'])->group(function () {
     Route::get('pelanggan/personal', [DashboardPelangganController::class, 'index'])->name('customer.dashboard');
     Route::get('pelanggan/personal/update', [DashboardPelangganController::class, 'update'])->name('customer.dashboard.update');
     Route::put('pelanggan/personal/edit', [DashboardPelangganController::class, 'edit'])->name('customer.dashboard.edit');
@@ -109,6 +110,8 @@ Route::middleware(['auth', 'role:Pelanggan', 'verified', 'ensure.member'])->grou
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('admin/profile', [ProfileAdminController::class, 'index'])->name('admin.profile');
+    Route::put('admin/profile/update', [ProfileAdminController::class, 'update'])->name('admin.profile.update');
 
     Route::get('admin/dashboard/member', [MemberAdminController::class, 'index'])->name('admin.dashboard.member');
     Route::get('admin/dashboard/search', [MemberAdminController::class, 'seacrh'])->name('admin.dashboard.member.search');
@@ -116,6 +119,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('admin/dashboard/activate', [ActivateAdminController::class, 'index'])->name('admin.dashboard.activate');
     Route::get('admin/dashboard/activate/{id}', [ActivateAdminController::class, 'show'])->name('admin.dashboard.activate.show');
     Route::put('admin/dashboard/activate/update/{id}', [ActivateAdminController::class, 'update'])->name('admin.dashboard.activate.update');
+
 
     Route::get('admin/logout', [AuthAdminController::class,'logout'])->name('admin.logout');
 });

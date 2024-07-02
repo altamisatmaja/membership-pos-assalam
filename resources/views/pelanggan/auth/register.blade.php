@@ -37,7 +37,7 @@
                     <h1 class="text-xl font-bold leading-tight text-center tracking-tight text-gray-900 md:text-2xl ">
                         Selamat datang di Assalam Hypermarket
                     </h1>
-                    <form class="space-y-4 md:space-y-6" action="{{ route('register') }}" method="POST">
+                    <form class="space-y-4 md:space-y-6" action="{{ route('pelanggan.register') }}" method="POST">
                         @csrf
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>

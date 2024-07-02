@@ -35,6 +35,7 @@ class DashboardPelangganController extends Controller
         $user = Auth::user();
         $member = Member::where("id_user", $user->id)->first();
         $nomor_pas = $member->nomor_pas;
+        // dd(intval($nomor_pas));
 
         return view('pelanggan.pages.barcode.index', compact('user', 'member', 'nomor_pas'));
     }
