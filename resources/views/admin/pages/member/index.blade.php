@@ -101,7 +101,7 @@
                                         <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                                             {{ $member->status }}</td>
                                         <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                            <a href="{{ route('admin.dashboard.member.show', $member->nomor_pas) }}">
+                                            <a href="{{ route('admin.dashboard.member.show', $member->id) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px"
                                                     viewBox="0 -960 960 960" width="20px" fill="#393F47">
                                                     <path

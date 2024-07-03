@@ -22,7 +22,7 @@ class MemberAdminController extends Controller
     }
 
     public function show($nomor_pas){
-        $members = Member::where('nomor_pas', $nomor_pas)->first();
+        $members = Member::where('id', $nomor_pas)->first();
 
         return view('admin.pages.member.show', compact('members'));
     }
