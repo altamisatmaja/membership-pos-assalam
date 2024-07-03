@@ -94,7 +94,7 @@
                                         <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                                             {{ $member->no_hp }}</td>
                                         <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                            {{ $member->user->email }}</td>
+                                            {{ $member->user ? $member->user->email : 'Tidak ada data' }}</td>
                                         <td class="px-4 py-4 text-sm text-gray-500">
                                             {{ $member->provinsi }}, {{ $member->kabupaten }}, {{ $member->kecamatan }},
                                             {{ $member->kelurahan }}, {{ $member->rt_rw }}</td>
