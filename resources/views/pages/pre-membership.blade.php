@@ -28,7 +28,7 @@
                         akan
                         mendapatkan keuntungan atau benefit seperti :
                     </p>
-                    <div class="mt-8 px-10 text-gray-600">
+                    <div class="mt-8 px-10 text-gray-600 sm:px-0 md:px-0">
                         <ul class="list-decimal">
                             <li>Reward Point:</li>
                             <ul class="list-disc px-10 pt-5">
@@ -52,7 +52,7 @@
                     </p>
                     <div class="flex justify-center my-3">
                         <a href="{{ route('pages.membership') }}"
-                            class="w-1/6  items-center flex px-5 justify-center bg-green-800 hover:bg-white hover:text-green-800 text-center ring-1 ring-green-800 text-white text-xl py-3 rounded-lg transition-all duration-150">Register</a>
+                            class="md:w-full sm:w-full  items-center flex px-5 justify-center bg-green-800 hover:bg-white hover:text-green-800 text-center ring-1 ring-green-800 text-white text-xl py-3 rounded-lg transition-all duration-150">Register</a>
                         </a>
                     </div>
                 </div>
